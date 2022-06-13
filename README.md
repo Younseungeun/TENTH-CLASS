@@ -13,12 +13,12 @@
 6. int motor2PinA = 4 ; //connect to pin4
 7. int motor2PinB =5; //connect to pin5
 8. int enableLPin= 10 ; //left, the motor 2pin is the motor on the left
-9. int RLED=8;
-10. int LLED=7;
+9. int RLED=8;         //connect to pin8
+10. int LLED=7;         //connect to pin7    
 11. char in; //Specify a variable
 12. void setup() {
-13. pinMode(RLED, OUTPUT);
-14. pinMode(LLED, OUTPUT);
+13. pinMode(RLED, OUTPUT);   //use right side led as output
+14. pinMode(LLED, OUTPUT);   //use left side led as output
 15. pinMode(motor1PinA, OUTPUT); //use motor1PinA as an output (result)
 16. pinMode(motor1PinB, OUTPUT); //use motor1PinB as an output (result)
 17. pinMode(enableLPin, OUTPUT); //use enableLPin as output (result)
@@ -65,7 +65,7 @@
 58. digitalWrite(motor2PinB,LOW);
 59. }
 60. void Right(){ // RIGHT
-61. digitalWrite(RLED, HIGH);
+61. digitalWrite(RLED, HIGH);       //turn on the right side led
 62. analogWrite(enableRPin, 255);
 63. analogWrite(enableLPin, 255);
 64. digitalWrite(motor1PinA, LOW);
@@ -74,7 +74,7 @@
 67. digitalWrite(motor2PinB,LOW);
 68. }
 69. void Left(){ // LEFT
-70. digitalWrite(LLED, HIGH);
+70. digitalWrite(LLED, HIGH);        //turn on the left side led
 71. analogWrite(enableRPin, 255);
 72. analogWrite(enableLPin, 255);]
 73. digitalWrite(motor1PinA, HIGH);
@@ -83,8 +83,8 @@
 76. digitalWrite(motor2PinB,LOW);
 77. }
 78. void Stop(){ // STOP
-79. digitalWrite(LLED, LOW);
-80. digitalWrite(RLED, LOW);
+79. digitalWrite(LLED, LOW);     //turn off the left side led
+80. digitalWrite(RLED, LOW);      //turn off the right side led 
 81. analogWrite(enableRPin, 255);
 82. analogWrite(enableLPin, 255);
 83. digitalWrite(motor1PinA, LOW);
